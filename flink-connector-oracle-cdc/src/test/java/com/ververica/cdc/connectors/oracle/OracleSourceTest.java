@@ -54,10 +54,7 @@ import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -755,6 +752,11 @@ public class OracleSourceTest extends AbstractTestBase {
         @Override
         public boolean isRestored() {
             return isRestored;
+        }
+
+        @Override
+        public OptionalLong getRestoredCheckpointId() {
+            return null;
         }
 
         @Override

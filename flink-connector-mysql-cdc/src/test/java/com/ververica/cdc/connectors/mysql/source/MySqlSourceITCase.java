@@ -45,7 +45,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import static org.apache.flink.shaded.guava18.com.google.common.base.Preconditions.checkState;
+import static org.apache.flink.shaded.guava30.com.google.common.base.Preconditions.checkState;
 
 /** IT tests for {@link MySqlSource}. */
 public class MySqlSourceITCase extends MySqlSourceTestBase {

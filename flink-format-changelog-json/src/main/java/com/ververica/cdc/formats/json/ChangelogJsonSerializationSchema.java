@@ -20,7 +20,7 @@ package com.ververica.cdc.formats.json;
 
 import org.apache.flink.api.common.serialization.SerializationSchema;
 import org.apache.flink.formats.common.TimestampFormat;
-import org.apache.flink.formats.json.JsonOptions;
+import org.apache.flink.formats.json.JsonFormatOptions;
 import org.apache.flink.formats.json.JsonRowDataSerializationSchema;
 import org.apache.flink.table.api.DataTypes;
 import org.apache.flink.table.data.GenericRowData;
@@ -58,9 +58,9 @@ public class ChangelogJsonSerializationSchema implements SerializationSchema<Row
                 new JsonRowDataSerializationSchema(
                         createJsonRowType(fromLogicalToDataType(rowType)),
                         timestampFormat,
-                        JsonOptions.MapNullKeyMode.FAIL,
-                        JsonOptions.MAP_NULL_KEY_LITERAL.defaultValue(),
-                        JsonOptions.ENCODE_DECIMAL_AS_PLAIN_NUMBER.defaultValue());
+                        JsonFormatOptions.MapNullKeyMode.FAIL,
+                        JsonFormatOptions.MAP_NULL_KEY_LITERAL.defaultValue(),
+                        JsonFormatOptions.ENCODE_DECIMAL_AS_PLAIN_NUMBER.defaultValue());
         this.timestampFormat = timestampFormat;
     }
 
